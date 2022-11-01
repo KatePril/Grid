@@ -1,0 +1,226 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Myriad Pro", Myriad, Sans-serif;
+    background: rgb(30, 42, 53);
+    color: white;
+}
+a {
+    color: white;
+}
+
+.grid-container {
+    height: 100vh;
+  display: grid;
+  grid-template-columns:[navstart] 1fr [navend] 10px
+                        [contstart] 5fr [contend] 10px
+                        [asidestart] 1fr [asidend];
+  grid-template-rows: [row1start] 150px [row1end] 10px
+                      [row2start] 1fr [row2end] 10px
+                      [row3start] 100px [row3end];
+  grid-auto-flow: row;
+}
+.header {
+    grid-column: navstart / asidend;
+    grid-row: row1start / row1end;
+    display: grid;
+    grid-template-rows: [row1start] 1fr [row1end]
+                      [row2start] 1fr [row2end]
+                      [row3start] 1fr [row3end];
+    background: linear-gradient(180deg, rgba(40,52,63,1) 0%,
+     rgba(31,54,65,1) 100%);
+}
+.content {
+    grid-column: contstart / contend;
+    grid-row: row2start / row2end;
+    background: linear-gradient(150deg, rgba(40,52,63,1) 0%,
+     rgba(31,54,65,1) 45%,
+      rgba(60,105,129,1) 45%,
+       rgba(65,127,160,1) 100%);
+    display: grid;
+    grid-template-columns:[col1start] 1fr [col1end] 10px
+                        [col2start] 3fr [col2end] 10px
+                        [col3start] 1.5fr [col3end] 10px
+                        [col4start] 2fr [col4end] 10px
+                        [col5start] 1fr [col5end];
+    grid-template-rows: [row1start] 1fr [row1end] 10px
+                      [row2start] 6fr [row2end] 10px
+                      [row3start] 1fr [row3end];
+}
+.cont1 {
+    grid-column: col2start / col2end;
+    grid-row: row2start / row2end; 
+}
+.cont2 {
+    grid-column: col4start / col4end;
+    grid-row: row2start / row2end; 
+    background: radial-gradient(circle, #22577c 0%, #1e1a36 90%);
+    width: 300px;
+    height: 520px;
+    border-radius: 30px;
+    display: grid;
+    /* grid-auto-flow: row; */
+    grid-row: 50px 1fr 40px;
+}
+.cont3 {
+    display: grid;
+    grid-template-columns: 18% 18% 18%;
+}
+form {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+input {
+    background: #dfdada;
+    height: 35px;
+    width: 98%;
+    border-radius: 5px;
+    
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 0px solid black;
+}
+#agree {
+    background-color: rgba(31,54,65,0);
+    height: 15px;
+    width: 15px;
+    border-radius: 5px;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(255, 255, 255);
+}
+#submit {
+    margin-top: 20px;
+    margin-left: 30%;
+    width: 40%;
+    font-weight: bold;
+    font-size: 18px;
+    height: 40px;
+}
+
+.color {
+    background: radial-gradient(circle, #4084b5 0%, #1e1a36 90%);
+    width: 30px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+img {
+    width: 30px;
+}
+.menu {
+    grid-column: navstart / navend;
+    grid-row: row2start / row2end;
+    display: grid;
+    grid-auto-flow: row;
+    padding-left: 20px;
+    background: linear-gradient(90deg, rgba(40,52,63,1) 0%,
+     rgba(31,54,65,1) 100%);
+    
+}
+.sidebar {
+    grid-column: asidestart / asidend;
+    grid-row: row2start / row2end;
+    display: grid;
+    padding-left: 20px;
+    background: linear-gradient(90deg,rgba(65,127,160,1) 0%,
+     rgba(60,105,129,1)   100%);
+}
+.footer {
+    display: grid;
+    grid-column: navstart / asidend;
+    grid-row: row3start / row3end;
+    grid-template-rows: [row1start] 1fr [row1end]
+                      [row2start] 1fr [row2end]
+                      [row3start] 1fr [row3end];
+    background: linear-gradient(180deg,rgba(65,127,160,1) 0%,
+     rgba(60,105,129,1)   100%);
+}
+h1 {
+    grid-row: row2start / row2end;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 38px;
+}
+h2 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+h3 {
+    grid-row: row2start / row2end;
+    text-align: center;
+}
+@media screen and (min-width: 0px) and (max-width: 600px) {
+    .grid-container {
+        grid-template-rows: [row1start] 150px [row1end] 10px
+                      [row2start] 1fr [row2end] 10px
+                      [row3start] 1fr [row3end] 10px
+                      [row4start] 1fr [row4end] 10px
+                      [row5start] 100px [row5end];
+    }
+    .content {
+        grid-column: navstart / asidend;
+        grid-row: row3start / row3end;
+        
+    }
+    .sidebar {
+        grid-column: navstart / asidend;
+        grid-row: row4start / row4end;
+        display: none;
+        
+    }
+    .menu {
+        grid-column: navstart / asidend;
+        grid-row: row2start / row2end;
+        width: 100%;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 100%, repeat(3, 30%);
+        grid-template-rows: repeat(4, 40px);
+        padding: 15px;
+        padding-right: 5px;
+        background: linear-gradient(90deg, rgba(40,52,63,1) 0%,
+         rgba(31,54,65,1) 100%);
+        
+    }
+    #h2 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        text-align: center;
+        width: 100%;
+    }
+    .footer {
+        grid-column:navstart / asidend;
+        grid-row: row5start / row5end;
+        padding-bottom: 30px;
+    }
+    .content {
+        display: grid;
+        grid-template-columns:[col1start] 5% [col1end] 5px
+                            [col2start] 90% [col2end] 5px
+                            [col3start] 5% [col3end];
+        grid-template-rows: [row1start] 10px [row1end] 10px
+                      [row2start] 1fr [row2end] 10px
+                      [row3start] 2fr [row3end] 10px
+                      [row4start] 30px [row4end];
+    }
+    .cont1 {
+        grid-column: col2start / col2end;
+        grid-row: row2start / row2end; 
+    }
+    .cont2 {
+        grid-column: col2start / col2end;
+        grid-row: row3start / row3end; 
+        background: radial-gradient(circle, #22577c 0%, #1e1a36 90%);
+        width: 100%;
+        height: 520px;
+        border-radius: 30px;
+        display: grid;
+        /* grid-auto-flow: row; */
+        grid-row: 50px 1fr 40px;
+    }
+
+
+}
